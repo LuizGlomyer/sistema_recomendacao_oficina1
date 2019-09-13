@@ -1,0 +1,514 @@
+Abelha
+Abrantes
+Agostinho
+Aguiar
+Albuquerque
+Alegre
+Alegria
+Aleixo
+Alencastro
+Almada
+Alvarenga
+Alves
+Alvim
+Amado
+Amarante
+Amoreira
+Amorim
+Andrade
+Anhaia
+Antena
+Antunes
+Aparício
+Apolinário
+Aranha
+Arantes
+Araújo
+Aroeira
+Arriaga
+Arruda
+Assis
+Assumpção
+Assunção
+Avelar
+Azambuja
+Bairros
+Baldaia
+Banheira
+Baptista
+Barata
+Barateiro
+Barbalho
+Barbosa
+Barcelos
+Barreira
+Barreto
+Barros
+Barroso
+Bastos
+Beira-Mar
+Belchior
+Beltrão
+Belém
+Benevides
+Bentes
+Bernardes
+Bezerra
+Biscaia
+Bittencourt
+Boaventura
+Bomdia
+Bomtempo
+Bonfim
+Borges
+Borja
+Botelho
+Bouças
+Braga
+Bragança
+Branco
+Brandão
+Brasil
+Brites
+Brito
+Brião
+Brum
+Bréia
+Bulhões
+Cabral
+Cabreira
+Cabrita
+Cachoeira
+Caetano
+Caldas
+Caldeira
+Calixto
+Camacho
+Camilo
+Capelo
+Cardoso
+Carneiro
+Carrasco
+Carreira
+Carreiro
+Carvalheira
+Carvalhães
+Cascais
+Caseira
+Casqueira
+Castanheira
+Castanho
+Castelo
+Castro
+Cavalcante
+Cerqueira
+Chaves
+Cintra
+Coelho
+Coimbra
+Conceição
+Coqueiro
+Correia
+Corrêa
+Corte
+Corte Real
+Cortês
+Costa
+Coutinho
+Couto
+Crespo
+Cunha
+Curado
+Custódio
+Córdoba
+Damásio
+Dantas
+Darela
+Datena
+Dias
+Diegues
+Diniz
+Dinís
+Domingues
+Dorneles
+Drumond
+Duarte
+Dutra- de Bem
+D’Ávila
+Escobar
+Espinheira
+Espinhosa
+Espinosa
+Espíndola
+Esteves
+Estrada
+Evangelista
+Fagundes
+Faria
+Farias
+Faro
+Feijó
+Feitosa
+Felicidade
+Fernandes
+Fernão
+Ferrari
+Ferraz
+Ferraço
+Ferreira
+Fialho
+Figueira
+Figueiredo
+Figueiroa
+Flores
+Fogaça
+Fontes
+Fontinhas
+Fraga
+Fragoso
+França
+Freire
+Freitas
+Frota
+Frutuoso
+Fróes
+Furtado
+Félix
+Gabeira
+Gal
+Galego
+Galvão
+Garcez
+Garcia
+Garcês
+Gaspar
+Gentil
+Geraldes
+Gil
+Godinho
+Godins
+Godoy
+Gomes
+Gomide
+Gonzaga
+Gonçalves
+Goulart
+Gouveia
+Gouvêa
+Grotas
+Guedelha
+Guedes
+Guimarães
+Gusmão
+Guterres
+Góes
+Góis
+Henriques
+Hermingues
+Hernandes
+Hilário
+Hipólito
+Ibrahim
+Ilha
+Infante
+Jaques
+Jesus
+Jordão
+Junqueira
+Lacerda
+Lago
+Lagos
+Laje
+Lamas
+Lancastre
+Laranjeira
+Leiria
+Leite
+Leitão
+Lemes
+Lemos
+Lessa
+Leão
+Limeira
+Lisboa
+Lobo
+Longuinho
+Lopes
+Louzada
+Lustosa
+Macedo
+Machado
+Macieira
+Maciel
+Madeira
+Mafra
+Magal
+Magalhães
+Maia
+Maior
+Maldonado
+Malheiros
+Mangueira
+Manhães
+Manso
+Marcondes
+Marinho
+Marins
+Marques
+Martim
+Martins
+Marçal
+Mascarenhas
+Matos
+Matoso
+Medeiros
+Medina
+Meira
+Meireles
+Mello
+Mendanha
+Mendes
+Mendonça
+Menendes
+Menezes
+Mesquita
+Miranda
+Modesto
+Moniz
+Monjardim
+Monteira
+Monteiro
+Montes
+Moraes
+Morais
+Moreira
+Moreno
+Morgado
+Moura
+Mourão
+Munhoz
+Muniz
+Negrão
+Neves
+Nobre
+Nogueira
+Novaes
+Novais
+Nunes
+Nóbrega
+Olivares
+Oliveira
+Ordonhes
+Ornelas
+Ornélas
+Ourique
+Ouriques
+Pacheco
+Padilha
+Paes
+Paiva
+Palhares
+Palmeira
+Paraíso
+Paredes
+Paris
+Parreira
+Passarinho
+Paz
+Pedroso
+Peixoto
+Penteado
+Peralta
+Pereira 
+Peres
+Pessanha
+Pilar
+Pimenta
+Pimentel
+Pinheira
+Pinheiro
+Pinto
+Pires
+Porteira
+Portela
+Porto
+Proença
+Pêra
+Quaresma
+Quarteira
+Queiroz
+Queirós
+Rabelo
+Raia
+Ramalho
+Rameira
+Ramires
+Ramos
+Raposo
+Rebelo
+Rebouças
+Regueira
+Resende
+Rezende
+Ribas
+Ribeira
+Ribeiro
+Rios
+Rodovalho
+Rodrigues
+Rolim
+Roseira
+Ruivo
+Rêgo
+Sais
+Salazar
+Saldanha
+Sales
+Salgado
+Salgueiro
+Sampaio
+Sanches
+Santana
+Santarém
+Saraiva
+Sarmento
+Seabra
+Seixas
+Seixeles
+Serpa
+Serra
+Severo
+Silvares
+Silveira
+Simas
+Simão
+Simões
+Siqueira
+Siqueiro
+Soares
+Sodré
+Soeira
+Soeiro
+Solimões
+Sousa
+Souto
+Souza
+Subtil
+Tancredo
+Tavares
+Taveira
+Teixeira
+Teles
+Torres
+Trindade
+Valadares
+Valgas
+Varela
+Vargas
+Vasco
+Vasconcelos
+Vasques
+Vaz
+Veiga
+Velasques
+Veles
+Velho
+Veloso
+Ventura
+Viana
+Vidal
+Videira
+Vieira
+Vila Lobos
+Vilagrande
+Vilela
+Vimaranes
+Vinhedo
+Viveiros
+Xavier
+Ximenes
+Xisco
+Zagalo
+Zaganelli
+Zanette
+da Aldeia
+da Bandeira
+da Barra
+da Barranca
+da Conceição
+da Costa
+da Cruz
+da Cunha
+da Fonseca
+da Fontoura
+da Fronteira
+da Gama
+da Luz
+da Madureira
+da Maia
+da Mata
+da Mota
+da Nóbrega
+da Paz
+da Penha
+da Rocha
+da Rosa
+da Silva
+da Silveira
+da Terra
+da Veiga
+das Neves
+de Abreu
+de Aguiar
+de Alcântara
+de Alencar
+de Almeida
+de Andrade
+de Aragão
+de Araújo
+de Assis
+de Assunção
+de Azevedo
+de Barros
+de Belém
+de Borba
+de Brito
+de Camargo
+de Caminha
+de Campos
+de Carvalho
+de Castilhos
+de Castro
+de Chagas
+de Farias
+de Figueiredo
+de Freitas
+de Godoi
+de Jesus
+de Lara
+de Lima
+de Lins
+de Lira
+de Medeiros
+de Melo
+de Noronha
+de Oliveira
+de Paula
+de Quadros
+de Souza
+de Sá
+de Toledo
+de Ávila
+do Amaral
+do Canto
+do Livramento
+do Minho
+do Nascimento
+do Prado
+do Vale
+dos Anjos
+dos Passos
+dos Reis
+dos Santos
+Álvares
+Ávila
