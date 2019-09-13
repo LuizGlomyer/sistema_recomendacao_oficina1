@@ -1,0 +1,16 @@
+Name = 0
+Platform = 1
+Year_of_Release = 2
+Genre = 3
+Publisher = 4
+NA_Sales = 5
+EU_Sales = 6
+JP_Sales = 7
+Other_Sales = 8
+Global_Sales = 9
+Critic_Score = 10
+Critic_Count = 11
+User_Score = 12
+User_Count = 13
+Developer = 14
+Rating = 15
