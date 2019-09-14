@@ -1,11 +1,14 @@
 import csv
 import os
+from src import criar_dataset
 
 from src import metrica
 from var_colunas import *
 
+
 def listarJogos():
-    for jogo in jogos_nota:
+    lista_jogos = getDataset()
+    for jogo in lista_jogos:
         print(jogo)
 
 def listarUsuarios():
@@ -14,10 +17,13 @@ def listarUsuarios():
 
 def detalharUsuarioNome(nome): #nota: dicionários não possuem ordem, então a ordem dos elementos podem diferir a cada print
     for user in lista_usuarios:
-        if(user[1] == nome):
+        if user[1] == nome:
             print("Id do usuário:", user[0])
             print("Nome do usuário:", user[1])
-            print("Avaliações:", user[2])
+            print("=" * 50)
+            for key in user[2]:
+                print(key + " -", user[2][key])
+            print("=" * 50)
             return
     print("Usuário não encontrado")
 
@@ -26,7 +32,10 @@ def detalharUsuarioId(id):
         if(user[0] == id):
             print("Id do usuário:", user[0])
             print("Nome do usuário:", user[1])
-            print("Avaliações:", user[2])
+            print("=" * 50)
+            for key in user[2]:
+                print(key + " -", user[2][key])
+            print("=" * 50)
             return
     print("Usuário não encontrado")
 
@@ -42,31 +51,39 @@ def getTamanhoDatasetUsados(dados): # apenas os jogos que estão sendo usados
         tam += 1
     return tam
 
+#criar_dataset.criar()
 
-dados = open("data/vg.csv")
-dados = csv.reader(dados)
-db = open('avaliacoes.ldict', 'r')
-lista_usuarios = eval(db.read())
-jogos_nota = []
-qtd = 0
+def getDataset():
+    dados = open("data/vg.csv")
+    dados = csv.reader(dados)
+    jogos_nota = []
+    qtd = 0
 
-for linha in dados:
-    if linha[Critic_Score] != '':
-        jogos_nota.append(linha)
-        qtd += 1
-jogos_nota.pop(0)
-jogos_nota.sort()
-jogos_nota[0][Name] = jogos_nota[0][Name].lstrip(" ")
-jogos_nota.sort()
-a = jogos_nota[0]
-b = jogos_nota[1]
+    for linha in dados:
+        if linha[Critic_Score] != '':
+            jogos_nota.append(linha)
+            qtd += 1
+    jogos_nota.pop(0)
+    jogos_nota.sort()
+    jogos_nota[0][Name] = jogos_nota[0][Name].lstrip(" ")
+    jogos_nota.sort()
+    return jogos_nota
 
-#listarJogos()
+def getAvaliacoes():
+    db = open('avaliacoes.ldict', 'r')
+    lista_usuarios = eval(db.read())
+    return lista_usuarios
+
+
+lista_usuarios = getAvaliacoes()
+
+
 #listarUsuarios()
 #detalharUsuarioNome('Holly Martim')
 #detalharUsuarioId(1497)
 
-#todo métricas estão dando negativo pois não há jogos em comum, aumentar a qtd de avaliações ou diminuir qtd jogos
 #print(metrica.distanciaEuclidiana(users[0][2], users[5][2]))
 #print(users[0][2])
+
 print(metrica.recommend(lista_usuarios[0][2], lista_usuarios, "cosseno")) # refazer esse [0][2]
+#print(lista_usuarios[0])
