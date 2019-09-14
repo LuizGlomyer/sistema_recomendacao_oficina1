@@ -4,7 +4,7 @@ import random
 from var_colunas import *
 from src import gerador
 
-
+#criar metodo
 
 dados = open("data/vg.csv")
 dados = csv.reader(dados)

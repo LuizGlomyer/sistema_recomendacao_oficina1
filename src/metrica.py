@@ -13,7 +13,11 @@ def similaridadeCosseno(rating1, rating2):
     for key in rating1:
         if key in rating2:
             somaXY += rating1[key] * rating2[key]
-    similaridade = somaXY/(sqrt(moduloX) * sqrt(moduloY)),8
+    denominador = sqrt(moduloX) * sqrt(moduloY)
+
+    if denominador == 0:
+        return 0
+    similaridade = somaXY/denominador
     return similaridade
 
 
@@ -91,26 +95,41 @@ def distanciaMinkowski(rating1, rating2, r):
     else:
         return -1
 
-def computeNearestNeighbor(username, users):
+def computeNearestNeighbor(username, users, algoritmo):
     """creates a sorted list of users based on their distance to username"""
     distances = []
     for user in users: # para cada usuário da lista de usuários
-        if user != username:
-            distance = similaridadeCosseno(users[user], users[username])  # calcule a distância
-            distances.append((distance, user))
-    # sort based on distance -- closest first
+        if user[2] != username:
+            a = user[2] #var de teste
+            b = username
+            if algoritmo == "manhattan":
+                distance = manhattan(a, b)
+                distances.append((distance, user))
+            elif algoritmo == "distanciaEuclidiana":
+                distance = distanciaEuclidiana(a, b)
+                distances.append((distance, user))
+            elif algoritmo == "pearson":
+                distance = pearsonCorrelation(a, b)
+                distances.append((distance, user))
+            elif algoritmo == "cosseno":
+                distance = similaridadeCosseno(a, b)  # CUIDADO, no cosseno os valores devem estar ordenados em ordem crescente, nos outros algoritmos em ordem decrescente
+                distances.append((distance, user))
+
     distances.sort()
+    distances.reverse() if algoritmo == "cosseno" else None
+    for rating in distances:
+        print(rating[0])
     return distances  # retorna uma lista ordenada contendo todos os usuários e suas distâncias para o usuário a quem se quer recomendar
 
-def recommend(username, users):
+def recommend(username, users, algoritmo):
     """Give list of recommendations"""
     # first find nearest neighbor
-    nearest = computeNearestNeighbor(username, users)[0][1]  # vizinho mais próximo
+    nearest = computeNearestNeighbor(username, users, algoritmo)[0][1]  # vizinho mais próximo
 
     recommendations = []
     # now find bands neighbor rated that user didn't
-    neighborRatings = users[nearest]  # avaliações do vizinho
-    userRatings = users[username]  # avaliações do usuário
+    neighborRatings = nearest[2]  # avaliações do vizinho
+    userRatings = username  # avaliações do usuário
     for artist in neighborRatings: # para cada conteúdo que foi avaliado pelo vizinho
         if not artist in userRatings:  # se este conteúdo não foi avaliado pelo usuário, recomende-o
             recommendations.append((artist, neighborRatings[artist]))

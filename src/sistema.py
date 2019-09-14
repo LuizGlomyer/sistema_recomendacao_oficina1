@@ -9,11 +9,11 @@ def listarJogos():
         print(jogo)
 
 def listarUsuarios():
-    for user in users:
+    for user in lista_usuarios:
         print(user)
 
 def detalharUsuarioNome(nome): #nota: dicionários não possuem ordem, então a ordem dos elementos podem diferir a cada print
-    for user in users:
+    for user in lista_usuarios:
         if(user[1] == nome):
             print("Id do usuário:", user[0])
             print("Nome do usuário:", user[1])
@@ -22,7 +22,7 @@ def detalharUsuarioNome(nome): #nota: dicionários não possuem ordem, então a 
     print("Usuário não encontrado")
 
 def detalharUsuarioId(id):
-    for user in users:
+    for user in lista_usuarios:
         if(user[0] == id):
             print("Id do usuário:", user[0])
             print("Nome do usuário:", user[1])
@@ -30,10 +30,23 @@ def detalharUsuarioId(id):
             return
     print("Usuário não encontrado")
 
+def getTamanhoDatasetCompleto(dados):
+    tam = 0
+    for linha in dados:
+        tam += 1
+    return tam
+
+def getTamanhoDatasetUsados(dados): # apenas os jogos que estão sendo usados
+    tam = 0
+    for linha in dados:
+        tam += 1
+    return tam
+
+
 dados = open("data/vg.csv")
 dados = csv.reader(dados)
 db = open('avaliacoes.ldict', 'r')
-users = eval(db.read())
+lista_usuarios = eval(db.read())
 jogos_nota = []
 qtd = 0
 
@@ -55,4 +68,5 @@ b = jogos_nota[1]
 
 #todo métricas estão dando negativo pois não há jogos em comum, aumentar a qtd de avaliações ou diminuir qtd jogos
 #print(metrica.distanciaEuclidiana(users[0][2], users[5][2]))
-print(metrica.recommend(users[0][2], users))
+#print(users[0][2])
+print(metrica.recommend(lista_usuarios[0][2], lista_usuarios, "cosseno")) # refazer esse [0][2]
