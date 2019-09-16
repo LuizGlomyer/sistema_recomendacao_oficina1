@@ -7,7 +7,3 @@ O algoritmo usado num sistema de recomendação depende da natureza dos dados. C
 Datasets usados:
 https://www.kaggle.com/gregorut/videogamesales
 https://www.kaggle.com/rush4ratio/video-game-sales-with-ratings/
-
-Oficina 1
-https://www.kaggle.com/gregorut/videogamesales/
-https://www.kaggle.com/rush4ratio/video-game-sales-with-ratings/
