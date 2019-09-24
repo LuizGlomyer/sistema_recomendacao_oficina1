@@ -143,11 +143,11 @@ def computeNearestNeighbor(username, users, algoritmo):
 def recommend(username, users, algoritmo):
     """Give list of recommendations"""
     # first find nearest neighbor
-    nearest = computeNearestNeighbor(username, users, algoritmo)[0][1]  # vizinho mais próximo
+    nearest = computeNearestNeighbor(username[2], users, algoritmo)[0][1]  # vizinho mais próximo
 
     recommendations = []
     neighborRatings = nearest[2]  # avaliações do vizinho
-    userRatings = username  # avaliações do usuário
+    userRatings = username[2]  # avaliações do usuário
     for artist in neighborRatings:  # para cada conteúdo que foi avaliado pelo vizinho
         if not artist in userRatings:  # se este conteúdo não foi avaliado pelo usuário, recomende-o
             recommendations.append((artist, neighborRatings[artist]))

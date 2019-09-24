@@ -69,6 +69,7 @@ def getDataset():
     jogos_nota.sort()
     return jogos_nota
 
+
 def getAvaliacoes():
     db = open('avaliacoes.ldict', 'r')
     lista_usuarios = eval(db.read())
@@ -85,5 +86,17 @@ lista_usuarios = getAvaliacoes()
 #print(metrica.distanciaEuclidiana(users[0][2], users[5][2]))
 #print(users[0][2])
 
-print(metrica.recommend(lista_usuarios[0][2], lista_usuarios, "cosseno")) # refazer esse [0][2]
+
+d = {
+    "Portal 2": 9, "Super Mario Bros. 3": 10, "Xenoblade Chronicles": 8.7, "Fire Emblem": 9,
+    "Half-Life 2": 9.5, "Banjo-Kazooie": 10, "Final Fantasy VI": 9.3, "Chrono Trigger": 10,
+    "Donkey Kong Country: Tropical Freeze": 8.8, "Resident Evil 4": 8.5, "The Legend of Zelda: The Minish Cap": 9,
+
+}
+
+luiz = [0, 'Luiz Carlos Glomyer', d]
+
+print(metrica.recommend(lista_usuarios[0], lista_usuarios, "cosseno"))
+#TODO TENTAR FAZER KNN E PEGAR APENAS AVALIAÇÕES >= 7
 #print(lista_usuarios[0])
+    #return jogos_nota
