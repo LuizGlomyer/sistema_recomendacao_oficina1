@@ -149,7 +149,7 @@ def recommend(username, users, algoritmo):
     neighborRatings = nearest[2]  # avaliações do vizinho
     userRatings = username[2]  # avaliações do usuário
     for artist in neighborRatings:  # para cada conteúdo que foi avaliado pelo vizinho
-        if not artist in userRatings:  # se este conteúdo não foi avaliado pelo usuário, recomende-o
+        if not artist in userRatings:  # se este conteúdo não foi avaliado pelo usuário, recomenqe-o
             recommendations.append((artist, neighborRatings[artist]))
     return sorted(recommendations, key=lambda artistTuple: artistTuple[1],
                   reverse=True)  # retorne a lista com o conteúdo que foi recomendado

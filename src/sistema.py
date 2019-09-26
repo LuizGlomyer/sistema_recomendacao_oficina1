@@ -4,7 +4,7 @@ from src import criar_dataset
 
 from src import metrica
 from var_colunas import *
-
+#criar_dataset.criar()
 
 def listarJogos():
     lista_jogos = getDataset()
@@ -67,25 +67,19 @@ def getDataset():
     jogos_nota.sort()
     jogos_nota[0][Name] = jogos_nota[0][Name].lstrip(" ")
     jogos_nota.sort()
+
+    dados.close()
     return jogos_nota
 
 
 def getAvaliacoes():
     db = open('avaliacoes.ldict', 'r')
     lista_usuarios = eval(db.read())
+    db.close()
     return lista_usuarios
 
 
 lista_usuarios = getAvaliacoes()
-
-
-#listarUsuarios()
-#detalharUsuarioNome('Holly Martim')
-#detalharUsuarioId(1497)
-
-#print(metrica.distanciaEuclidiana(users[0][2], users[5][2]))
-#print(users[0][2])
-
 
 d = {
     "Portal 2": 9, "Super Mario Bros. 3": 10, "Xenoblade Chronicles": 8.7, "Fire Emblem": 9,
@@ -96,7 +90,7 @@ d = {
 
 luiz = [0, 'Luiz Carlos Glomyer', d]
 
-print(metrica.recommend(lista_usuarios[0], lista_usuarios, "cosseno"))
+print(metrica.recommend(luiz, lista_usuarios, "cosseno"))
 #TODO TENTAR FAZER KNN E PEGAR APENAS AVALIAÇÕES >= 7
 #print(lista_usuarios[0])
     #return jogos_nota
