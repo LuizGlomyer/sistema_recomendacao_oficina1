@@ -137,19 +137,22 @@ def computeNearestNeighbor(username, users, algoritmo):
 
     for rating in distances:
         print(rating[0])
-    return distances  # retorna uma lista ordenada contendo todos os usuários e suas distâncias para o usuário a quem se quer recomendar
+    return distances   #retorna uma lista ordenada contendo todos os usuários e suas distâncias para o usuário a quem se quer recomendar
 
 
 def recommend(username, users, algoritmo):
-    """Give list of recommendations"""
-    # first find nearest neighbor
-    nearest = computeNearestNeighbor(username[2], users, algoritmo)[0][1]  # vizinho mais próximo
-
+    nearest = computeNearestNeighbor(username[2], users, algoritmo)  # vizinhos mais próximos, retorna uma tupla com o grau de similaridade [0] e o usuário a que se refere [1]
     recommendations = []
-    neighborRatings = nearest[2]  # avaliações do vizinho
-    userRatings = username[2]  # avaliações do usuário
-    for artist in neighborRatings:  # para cada conteúdo que foi avaliado pelo vizinho
-        if not artist in userRatings:  # se este conteúdo não foi avaliado pelo usuário, recomenqe-o
-            recommendations.append((artist, neighborRatings[artist]))
+    while len(recommendations) < 5:  #mínimo de 5 recomendações
+        for usuario in nearest:
+            avaliacoes = list(usuario[1][2].items()) # convertendo dict em lista
+            avaliacoes.sort(key=lambda a: a[1], reverse=True) # diz para ordenar em ordem decrescente com base no segundo elemento da lista
+            for avaliacao in avaliacoes:
+                if len(recommendations) < 5 and avaliacao[1] >= 7 and avaliacao[0] not in username[2]:
+                    recommendations.append(avaliacao)
+            #print(recommendations)
+
+        break  # não conseguimos encher 5 recomendações, saímos do while
+
     return sorted(recommendations, key=lambda artistTuple: artistTuple[1],
                   reverse=True)  # retorne a lista com o conteúdo que foi recomendado

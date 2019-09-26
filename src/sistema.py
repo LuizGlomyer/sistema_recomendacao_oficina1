@@ -68,7 +68,6 @@ def getDataset():
     jogos_nota[0][Name] = jogos_nota[0][Name].lstrip(" ")
     jogos_nota.sort()
 
-    dados.close()
     return jogos_nota
 
 
@@ -85,7 +84,6 @@ d = {
     "Portal 2": 9, "Super Mario Bros. 3": 10, "Xenoblade Chronicles": 8.7, "Fire Emblem": 9,
     "Half-Life 2": 9.5, "Banjo-Kazooie": 10, "Final Fantasy VI": 9.3, "Chrono Trigger": 10,
     "Donkey Kong Country: Tropical Freeze": 8.8, "Resident Evil 4": 8.5, "The Legend of Zelda: The Minish Cap": 9,
-
 }
 
 luiz = [0, 'Luiz Carlos Glomyer', d]
