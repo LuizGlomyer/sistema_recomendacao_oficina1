@@ -78,6 +78,7 @@ def getAvaliacoes():
     return lista_usuarios
 
 
+
 lista_usuarios = getAvaliacoes()
 
 d = {
@@ -89,6 +90,3 @@ d = {
 luiz = [0, 'Luiz Carlos Glomyer', d]
 
 print(metrica.recommend(luiz, lista_usuarios, "cosseno"))
-#TODO TENTAR FAZER KNN E PEGAR APENAS AVALIAÇÕES >= 7
-#print(lista_usuarios[0])
-    #return jogos_nota
