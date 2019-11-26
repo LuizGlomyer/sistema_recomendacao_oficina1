@@ -4,7 +4,6 @@ from src import criar_dataset
 
 from src import metrica
 from var_colunas import *
-#criar_dataset.criar()
 
 def listarJogos():
     lista_jogos = getDataset()
@@ -71,15 +70,23 @@ def getDataset():
     return jogos_nota
 
 
-def getAvaliacoes():
+def getUsuarios():
     db = open('avaliacoes.ldict', 'r')
     lista_usuarios = eval(db.read())
     db.close()
     return lista_usuarios
 
+def getAvaliacoes():
+    avaliacoes = []
+    usuarios = getUsuarios()
+    for usuario in usuarios:
+        avaliacoes.append(usuario[2])
+    return avaliacoes
 
-
-lista_usuarios = getAvaliacoes()
+#criar_dataset.criar()
+lista_usuarios = getUsuarios()
+lista_avaliacoes = getAvaliacoes()
+lista_jogos = [jogo[0] for jogo in getDataset()]
 
 d = {
     "Portal 2": 9, "Super Mario Bros. 3": 10, "Xenoblade Chronicles": 8.7, "Fire Emblem": 9,
@@ -89,4 +96,39 @@ d = {
 
 luiz = [0, 'Luiz Carlos Glomyer', d]
 
+''' execução
+#listarJogos()
+#listarUsuarios()
 print(metrica.recommend(luiz, lista_usuarios, "cosseno"))
+'''
+
+
+def pairwise(iterable):
+    it = iter(iterable)
+    a = next(it, None)
+
+    for b in it:
+        yield (a, b)
+        a = b
+
+l = {'a':1,"b":2,"c":3,"d":4}
+
+for par in pairwise(l):
+    print(par)
+
+print(len(l))
+
+
+#print(metrica.recommend(luiz, lista_usuarios, "cosseno"))
+a = metrica.recommend_item(luiz, lista_usuarios, lista_jogos)
+for aa in a:
+    print(aa)
+#print(getUsuarios())
+#print(getAvaliacoes())
+
+
+'''
+for i in range(len(l)+1):
+    for j in range(len(l)+1-i):
+        print(l[j-1])
+'''

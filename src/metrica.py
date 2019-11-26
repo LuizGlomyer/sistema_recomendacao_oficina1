@@ -156,3 +156,67 @@ def recommend(username, users, algoritmo):
 
     return sorted(recommendations, key=lambda artistTuple: artistTuple[1],
                   reverse=True)  # retorne a lista com o conteúdo que foi recomendado
+
+
+
+
+
+def pairwise(iterable):
+    it = iter(iterable)
+    a = next(it, None)
+    for b in it:
+        yield (a, b)
+        a = b
+
+def mediaAvaliacoes(avaliacoes):
+    soma = 0
+    for a in dict.values(avaliacoes):
+        soma +=a
+    return soma/(len(avaliacoes))
+
+def similaridadeCossenoAjustada(item1, item2):
+
+    pass
+
+def recommend_item(username, users, dataset): # filtragem baseada em itens
+    similaridades = []
+    for par in pairwise(dataset): # para cada par de avaliacoes
+        numerador = 0
+        denominador1 = 0
+        denominador2 = 0
+        jogo1 = par[0]
+        jogo2 = par[1]
+        for usuario in users:
+            #print(usuario)
+            #print(users)
+            #print(jogo1, jogo2)
+
+            if jogo1 in usuario[2].keys() and jogo2 in usuario[2].keys() and jogo1 != jogo2: #se o usuário avaliou ambos os jogos
+                media = mediaAvaliacoes(usuario[2])
+                nota1 = usuario[2][jogo1]
+                nota2 = usuario[2][jogo2]
+                numerador += (nota1 - media) * (nota2 - media) #guardamos o valor
+
+                denominador1 += (nota1 - media) ** 2
+                denominador2 += (nota2 - media) ** 2
+
+                denominador = sqrt(denominador1) * sqrt(denominador2)
+                if denominador != 0:
+                    similaridades.append([par, numerador/denominador]) # adiciona o item a que se refere e a sua similaridade
+                else:
+                    similaridades.append([par, 0])
+    print(similaridades[0])
+    #sorted(similaridades, key=lambda sim: sim[0][1])
+    return similaridades
+     #recmoendar
+
+
+    #para cada par de musicas XY
+        #para cada usuario que ouviu a musica X
+            #se ele avaliou a musica Y, guardar
+        #calcular similaridade entre este par
+        #guardar numa lista de similaridades o par e sua similaridade
+
+    #pegar as músicas mais bem avaliadas do user
+    #recomendar músicas mais similares
+    pass
